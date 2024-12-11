@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация успешна</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Данные регистрации</h2>
+    <p>Имя пользователя: <span id="displayUsername"></span></p>
+    <p>Электронная почта: <span id="displayEmail"></span></p>
+</div>
+
+<script>
+    // Извлечение данных из localStorage
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+
+    // Отображение данных на странице
+    document.getElementById('displayUsername').textContent = username ? username : 'Не указано';
+    document.getElementById('displayEmail').textContent = email ? email : 'Не указано';
+</script>
+
+</body>
+</html>
